@@ -16,11 +16,12 @@ end
 group :production do
   gem 'pg'
 end
-
+gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 gem 'nokogiri', '~> 1.6', '>= 1.6.6.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
