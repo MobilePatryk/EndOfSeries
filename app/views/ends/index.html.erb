@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ends</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Product page</th>
+      <th>Position</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ends.each do |ends| %>
+      <tr>
+        <td><%= ends.product_id %></td>
+        <td><%= ends.product_page %></td>
+        <td><%= ends.position %></td>
+        <td><%= link_to 'Show', ends %></td>
+        <td><%= link_to 'Edit', edit_end_path(ends) %></td>
+        <td><%= link_to 'Destroy', ends, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New End', new_end_path %>

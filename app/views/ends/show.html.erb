@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @end.product_id %>
+</p>
+
+<p>
+  <strong>Product page:</strong>
+  <%= @end.product_page %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @end.position %>
+</p>
+
+<%= link_to 'Edit', edit_end_path(@end) %> |
+<%= link_to 'Back', ends_path %>
