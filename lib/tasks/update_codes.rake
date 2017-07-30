@@ -38,6 +38,7 @@ namespace :ending	 do
 
 		lis.each do |i|
 			e=End.new
+			e.position=i+1
 			puts id[i]["data-product-id"]
 			e.product_id=id[i]["data-product-id"]
 			puts "Produkt na #{a} stronie dobrych okazji"
