@@ -1,14 +1,8 @@
-namespace :ending	 do
-	desc "Log the db, delete the db, then update the db"
-	task :update_codes => :environment do 
-	# log the db
+  require 'open-uri'
+  require 'nokogiri'
 
-	# delete the db
-	End.destroy_all
+  
 	#scrapp data
-	require 'open-uri'
-	require 'nokogiri'
-
 
 	(1..20).each do |a|
 
@@ -37,19 +31,17 @@ namespace :ending	 do
 		id = page.css('.new-product-thumbnail')
 
 		lis.each do |i|
-			e=End.new
+				e=End.new
 			e.position=i+1
 			puts id[i]["data-product-id"]
 			puts id[i]["data-product-imgurl"]
 			puts id[i]["data-product-breadcrumb-family"]
-			e.img = id[i]["data-product-imgurl"]
-			e.family = id[i]["data-product-breadcrumb-family"]
 			e.product_id=id[i]["data-product-id"]
 			puts "Produkt na #{a} stronie dobrych okazji"
 			e.product_page = a
 			e.save
 		end
 	end
-	puts "work!"
- end
-end
+
+
+

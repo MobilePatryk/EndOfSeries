@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729232124) do
+ActiveRecord::Schema.define(version: 20171108213745) do
 
   create_table "ends", force: :cascade do |t|
     t.integer "product_id"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20170729232124) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "img"
+    t.string "family"
   end
 
 end

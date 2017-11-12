@@ -1,14 +1,11 @@
-namespace :ending	 do
-	desc "Log the db, delete the db, then update the db"
-	task :update_codes => :environment do 
-	# log the db
+class UpdateCodeJob < ApplicationJob
+  queue_as :default
+  require 'open-uri'
+  require 'nokogiri'
 
-	# delete the db
-	End.destroy_all
+  def perform(*args)
+    End.destroy_all
 	#scrapp data
-	require 'open-uri'
-	require 'nokogiri'
-
 
 	(1..20).each do |a|
 
@@ -53,3 +50,4 @@ namespace :ending	 do
 	puts "work!"
  end
 end
+

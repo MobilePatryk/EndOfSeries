@@ -5,6 +5,7 @@ class EndsController < ApplicationController
   # GET /ends.json
   def index
     @ends = End.all
+    #UpdateCodeJob.perform_later
   end
 
   # GET /ends/1
