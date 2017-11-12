@@ -2,33 +2,61 @@
 
 <h1>Decathlon</h1>
 <h2>Series end</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Product ID  </th>
-      <th>Page of End of series </th>
-      <th>Position on specific page  </th>
-      <th>Image</th>
-      <th>Family</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @ends.each do |ends| %>
+<% if ! mobile? %>
+  <table>
+    <thead>
       <tr>
-        <td><%= ends.product_id %></td>
-        <td><%= ends.product_page %></td>
-        <td><%= ends.position %></td>
-        <td><%=image_tag("http://www.decathlon.pl#{ends.img}")%></td>
-        <td><%= ends.family %></td>
-        <td><%=link_to "Open the site", "https://www.decathlon.pl/C-394910-dobre-okazje/I-Page" + "#{ends.product_page}" + "_40", target: :_blank %></td>
+        <th>Product ID  </th>
+        <th>Page of End of series </th>
+        <th>Position on specific page  </th>
+        <th>Image</th>
+        <th>Family</th>
+        <th colspan="5"></th>
       </tr>
-    <% end %>
-  </tbody>
+    </thead>
 
-</table>
+    <tbody>
+      <% @ends.each do |ends| %>
+        <tr>
+          <td><%= ends.product_id %></td>
+          <td><%= ends.product_page %></td>
+          <td><%= ends.position %></td>
+          <td><%=image_tag("http://www.decathlon.pl#{ends.img}")%></td>
+          <td><%= ends.family %></td>
+          <td><%=link_to "Open the site", "https://www.decathlon.pl/C-394910-dobre-okazje/I-Page" + "#{ends.product_page}" + "_40", target: :_blank %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<%else%>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Product ID  </th>
+        <th>Page of End of series </th>
+        <th>Position on specific page  </th>
+        <th>Image</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @ends.each do |ends| %>
+        <tr>
+          <td><%= ends.product_id %></td>
+          <td><%= ends.product_page %></td>
+          <td><%= ends.position %></td>
+          <td><%=image_tag("http://www.decathlon.pl#{ends.img}")%></td>
+          <td><%=link_to "Open the site", "https://www.decathlon.pl/C-394910-dobre-okazje/I-Page" + "#{ends.product_page}" + "_40", target: :_blank %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+<%end%>
 
 <br>
 
