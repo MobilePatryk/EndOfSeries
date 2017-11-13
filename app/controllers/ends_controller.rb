@@ -8,6 +8,14 @@ class EndsController < ApplicationController
     #UpdateCodeJob.perform_later
   end
 
+  def codeupdate
+    UpdateCodeJob.perform_later
+    flash[:success] = "Wait 2 minutes and refresh the page"
+    respond_to do |format|
+      format.html { redirect_to root_path }
+    end
+  end
+
   # GET /ends/1
   # GET /ends/1.json
   def show
