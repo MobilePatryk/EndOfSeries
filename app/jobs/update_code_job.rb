@@ -1,4 +1,5 @@
 class UpdateCodeJob < ApplicationJob
+  sidekiq_options retry: false
   queue_as :default
   require 'open-uri'
   require 'nokogiri'
