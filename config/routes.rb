@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   root to: "home#show"
 
-  #root :to => 'ends#index'
+ get "/koniec-seri" => 'ends#index'
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
   get "/codeupdate" => "ends#codeupdate"
