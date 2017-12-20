@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   get 'home/show'
-  
-  GoogleAuthExample::Application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
@@ -14,9 +12,8 @@ Rails.application.routes.draw do
   resource :home, only: [:show]
 
   root to: "home#show"
-end
 
-  root :to => 'ends#index'
+  #root :to => 'ends#index'
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
   get "/codeupdate" => "ends#codeupdate"
