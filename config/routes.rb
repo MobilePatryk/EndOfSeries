@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
+  get 'home/show'
+
   root :to => 'ends#index'
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'

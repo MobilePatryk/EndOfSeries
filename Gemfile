@@ -12,6 +12,7 @@ gem 'sidekiq'
 gem 'sinatra'
 gem 'redis-rails'
 gem 'twitter-bootstrap-rails'
+gem 'omniauth-google-oauth2', '~> 0.4.1'
 # Use sqlite3 as the database for Active Record
 group :development do
   gem 'sqlite3'
