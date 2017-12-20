@@ -1,5 +1,6 @@
 class EndsController < ApplicationController
   before_action :set_end, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
 
   # GET /ends
   # GET /ends.json
