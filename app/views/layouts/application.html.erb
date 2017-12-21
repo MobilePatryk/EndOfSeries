@@ -37,20 +37,22 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Seriesend</a>
+        <a class="navbar-brand" href="/">Seriesend</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
+            <% if request.env['PATH_INFO'] == "/koniec-serii" %>
             <li><%= link_to "Refresh", codeupdate_path, class: "btn btn-warning" %></li>
-            <li><%= link_to "Końce serii", "/konce-serii"  %></li>
+            <% else %>
+            <li><%= link_to "Link1", "/path1"  %></li>
+            <% end %>
+            <li><%= link_to "Końce serii", "/koniec-serii"  %></li>
             <li><%= link_to "Link3", "/path3"  %></li>
-            <li>
       <% if current_user %>
-        Signed in as <strong><%= current_user.name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+        <li>Signed in as <strong><%= current_user.name %></strong>!</li>
+        <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
       <% else %>
-        <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+        <li><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></li>
       <% end %>
-    </li>
           </ul>
         </div>
       </div>
