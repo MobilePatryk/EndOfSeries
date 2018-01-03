@@ -1,10 +1,14 @@
 OmniAuth.config.logger = Rails.logger
+
 if Rails.env.production?
     
     
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :google_oauth2, ENV['OACLIENT'], ENV['OASECRET'],{
-      :hd => 'decathlon.com'
+      :hd => 'decathlon.com',
+      prompt: "consent",
+      access_type: "offline",
+      scope: "calendar.readonly,email,profile,analytics.readonly"
   }
   end
   
