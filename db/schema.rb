@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103153006) do
+ActiveRecord::Schema.define(version: 20180103153709) do
 
   create_table "ends", force: :cascade do |t|
     t.integer "product_id"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20180103153006) do
     t.string "picture"
     t.string "refresh_token"
     t.string "test"
+    t.string "oauth_expires_at"
   end
 
 end
