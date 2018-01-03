@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.name = auth.info.name
       user.oauth_token = auth.credentials.token
-      user.oauth_expires_at = Time.now + auth.credentials.expires_at
       user.picture = auth.info.image
       user.refresh_token = auth.credentials.refresh_token
       #byebug
