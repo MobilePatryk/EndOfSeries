@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171220161532) do
+ActiveRecord::Schema.define(version: 20180103141855) do
 
   create_table "ends", force: :cascade do |t|
     t.integer "product_id"
@@ -22,14 +22,28 @@ ActiveRecord::Schema.define(version: 20171220161532) do
     t.string "family"
   end
 
+  create_table "sports", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_sports", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "sport_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
     t.string "name"
     t.string "oauth_token"
-    t.datetime "oauth_expires_at"
+    t.datetime "oauth_expires_at", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "picture"
+    t.string "refresh_token"
+    t.string "test"
   end
 
 end

@@ -1,11 +1,15 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :mobile?
-  protect_from_forgery with: :exception
-  helper_method :current_user
+  helper_method :current_user,:main_user,:mobile?
+  require 'google/apis/analytics_v3'
+  
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+  
+  def main_user
+      @main_user = User.first
   end
   
   def logged_in?

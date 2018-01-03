@@ -9,13 +9,18 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
 gem 'sidekiq'
+gem 'httparty', '~> 0.13.7'
 gem 'sinatra'
+gem 'ruby-jmeter', '~> 2.13', '>= 2.13.10'
+gem 'signet', '~> 0.8.1'
 gem 'redis-rails'
+gem 'google-api-client', '~> 0.9'
 gem 'twitter-bootstrap-rails'
-gem 'omniauth-google-oauth2', '~> 0.4.1'
+gem "omniauth-google-oauth2", :git => 'https://github.com/zquestz/omniauth-google-oauth2', :branch => 'master'
 # Use sqlite3 as the database for Active Record
 group :development do
   gem 'sqlite3'
+  gem 'byebug'
 end
 
 group :production do

@@ -13,6 +13,7 @@ namespace :ending	 do
 	(1..20).each do |a|
 
 		page = Nokogiri::HTML(open("https://www.decathlon.pl/C-394910-dobre-okazje/I-Page" + "#{a}" + "_40"))
+		
 
 		pis = page.css(".old-price-percentage")
 

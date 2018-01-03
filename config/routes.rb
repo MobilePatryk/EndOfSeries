@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   get 'home/show'
+  get 'data', to: 'analytics#data'
+  get 'account_summaries', to: 'analytics#account_summaries'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'

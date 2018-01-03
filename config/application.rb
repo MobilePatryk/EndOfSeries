@@ -10,6 +10,8 @@ module Seriesend
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
+    config.time_zone = 'Warsaw'
+    config.active_record.default_timezone = 'Warsaw'
 
     #initalize sidekiq
     config.active_job.queue_adapter = :sidekiq
