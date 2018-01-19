@@ -5,10 +5,13 @@ Rails.application.routes.draw do
 
   get 'home/show'
   get 'data', to: 'analytics#data'
+  get 'users/:id/edit', to: 'user#edit'
+  post 'users/:id/edit', to: 'user#update' 
   get 'account_summaries', to: 'analytics#account_summaries'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
+  resources :sports
 
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]

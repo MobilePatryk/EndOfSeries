@@ -42,8 +42,9 @@
           <ul class="nav navbar-nav">
             <% if request.env['PATH_INFO'] == "/koniec-serii" %>
             <li><%= link_to "Refresh", codeupdate_path, class: "btn btn-warning" %></li>
-            <% else %>
-            <li><%= link_to "Link1", "/path1"  %></li>
+            <%end%>
+            <% if current_user %>
+            <li><%= link_to "Dodaj sporty", "/users/#{current_user.id}/edit"  %></li>
             <% end %>
             <li><%= link_to "Końce serii", "/koniec-serii"  %></li>
             <li><%= link_to "Link3", "/path3"  %></li>

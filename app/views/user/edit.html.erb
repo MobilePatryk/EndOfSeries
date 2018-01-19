@@ -1,0 +1,17 @@
+<%=form_for :user do |u| %>
+    <h1>Subskrypcja Sportów</h1>
+    <div class="form-group">
+        <ul>
+          <%= u.collection_check_boxes :sport_ids, 
+                                    Sport.all, :id, :name do |cb|  %>
+                                    <li>
+             <span>
+              <%= cb.check_box %> 
+              <%= cb.text %>
+              <% end %>
+              </span>
+              </li>
+          </ul>
+    </div>
+<%= u.submit %>
+<% end %>
