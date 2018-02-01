@@ -19,6 +19,7 @@ gem 'twitter-bootstrap-rails'
 gem 'capybara-screenshot'
 #gem 'mechanize', '~> 2.7', '>= 2.7.5'
 gem 'watir'
+gem 'listen', '~> 3.1', '>= 3.1.1'
 gem 'poltergeist'
 gem 'capybara'
 gem "omniauth-google-oauth2", :git => 'https://github.com/zquestz/omniauth-google-oauth2', :branch => 'master'
@@ -69,7 +70,6 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'rvt'
   gem 'rails-web-console'
-  gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
