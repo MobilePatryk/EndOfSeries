@@ -16,7 +16,7 @@ class CheckIndexJob < ApplicationJob
       puts o
      # screenshot_now
       find_link_on_page(code,args[0],o,args[1])
-      screenshot_now  #- funkcja dostepna gdy ogarne wrzucanie plikow w public
+     # screenshot_now  #- funkcja dostepna gdy ogarne wrzucanie plikow w public
       next_page
     end
     # Do something later
