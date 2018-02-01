@@ -9,7 +9,7 @@ class UserController < ApplicationController
     
     def update
         if @user.update(user_params)
-            flash[:succes] = "Your account was update succesfuly"
+            flash[:success] = "Subskrypcje zaktualizowane"
             respond_to do |format|
             format.html { redirect_to root_path }
             end

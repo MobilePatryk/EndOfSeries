@@ -47,10 +47,11 @@
             <li><%= link_to "Dodaj sporty", "/users/#{current_user.id}/edit"  %></li>
             <% end %>
             <li><%= link_to "Końce serii", "/koniec-serii"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <li><%= link_to "Sprawdź SEO", "/check_index"  %></li>
+            <li><%= link_to "Historia SEO", "/keywords"  %></li>
       <% if current_user %>
-        <li>Signed in as <strong><%= current_user.name %></strong>!</li>
         <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+        <li><p id="zalogowany">Zalogowany jako <strong><%= current_user.name %></strong>!</p></li>
       <% else %>
         <li><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></li>
       <% end %>

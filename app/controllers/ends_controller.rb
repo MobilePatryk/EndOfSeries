@@ -8,6 +8,18 @@ class EndsController < ApplicationController
     @ends = End.all
     #UpdateCodeJob.perform_later
   end
+  
+  def response_index
+     flash[:success] = "#{params[:name]}   #{params[:site_name]}"
+     CheckIndexJob.perform_later(params[:name],params[:site_name])
+     respond_to do |format|
+      format.html { redirect_to root_path }
+    end
+  end
+  
+  def check_index
+    
+  end
 
   def codeupdate
     UpdateCodeJob.perform_later
@@ -81,4 +93,5 @@ class EndsController < ApplicationController
     def end_params
       params.require(:end).permit(:product_id, :product_page, :position)
     end
+    
 end

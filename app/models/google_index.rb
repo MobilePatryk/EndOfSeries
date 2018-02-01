@@ -1,0 +1,2 @@
+class GoogleIndex < ApplicationRecord
+end

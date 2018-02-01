@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user,:main_user,:mobile?
   require 'google/apis/analytics_v3'
+  add_flash_types :grunt
   
 
   def current_user

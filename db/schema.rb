@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103153709) do
+ActiveRecord::Schema.define(version: 20180201102442) do
 
   create_table "ends", force: :cascade do |t|
     t.integer "product_id"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20180103153709) do
     t.datetime "updated_at", null: false
     t.string "img"
     t.string "family"
+  end
+
+  create_table "google_indices", force: :cascade do |t|
+    t.string "keyword"
+    t.string "site"
+    t.integer "keyposition"
+    t.integer "siteposition"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "href"
   end
 
   create_table "sports", force: :cascade do |t|

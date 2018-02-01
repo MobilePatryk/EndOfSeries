@@ -16,6 +16,11 @@ gem 'signet', '~> 0.8.1'
 gem 'redis-rails'
 gem 'google-api-client', '~> 0.9'
 gem 'twitter-bootstrap-rails'
+gem 'capybara-screenshot'
+#gem 'mechanize', '~> 2.7', '>= 2.7.5'
+gem 'watir'
+gem 'poltergeist'
+gem 'capybara'
 gem "omniauth-google-oauth2", :git => 'https://github.com/zquestz/omniauth-google-oauth2', :branch => 'master'
 # Use sqlite3 as the database for Active Record
 group :development do
@@ -56,7 +61,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
+  #gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 end
 

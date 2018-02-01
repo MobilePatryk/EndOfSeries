@@ -1,0 +1,2 @@
+module GoogleIndexHelper
+end

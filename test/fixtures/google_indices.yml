@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keyword: MyString
+  site: MyString
+  keyposition: 1
+  siteposition: 1
+
+two:
+  keyword: MyString
+  site: MyString
+  keyposition: 1
+  siteposition: 1

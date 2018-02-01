@@ -1,0 +1,26 @@
+<table>
+    <thead>
+      <tr>
+        <th>Keyword  </th>
+        <th>Site </th>
+        <th>Key Position  </th>
+        <th>Site position</th>
+        <th>Link</th>
+        <th>Date</th>
+        <th colspan="6"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @google_indecies.each do |g| %>
+        <tr>
+          <td><%= g.keyword %></td>
+          <td><%= g.site %></td>
+          <td><%= g.keyposition%></td>
+          <td><%= g.siteposition%></td>
+          <td><%=link_to "Open the site",  g.href , target: :_blank %></td>
+          <td><%= g.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

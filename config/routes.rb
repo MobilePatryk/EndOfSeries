@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
+  get '/check_index' => "google_index#check_index"
+  post '/check_index' => "google_index#response_index"
+  get '/keywords' => "google_index#index"
   resources :sports
 
   resources :sessions, only: [:create, :destroy]
